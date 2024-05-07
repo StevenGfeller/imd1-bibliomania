@@ -1,0 +1,235 @@
+/* 💡 Configuration des styles du sélecteur de note */
+:root {
+  --gl-star-empty: url(../img/star-empty.svg);
+  --gl-star-full: url(../img/star-full.svg);
+  --gl-star-size: 24px;
+  --gl-tooltip-border-radius: 4px;
+  --gl-tooltip-font-size: 0.875rem;
+  --gl-tooltip-font-weight: 400;
+  --gl-tooltip-line-height: 1;
+  --gl-tooltip-margin: 12px;
+  --gl-tooltip-padding: 0.5em 1em;
+  --gl-tooltip-size: 6px;
+}
+
+/* 🦊 Vos styles ici */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+body {
+  padding-bottom: 80px;
+  /* Ajoute un espace au bas du body pour le contenu, ajustez selon la hauteur de votre footer */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/couvertures/origines_couverture.jpg");
+  background-size: cover;
+  filter: blur(8px);
+  /* Ajustez la valeur du flou selon vos préférences */
+  z-index: -1;
+  /* Assurez-vous que le fond flou est placé en arrière-plan */
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  /* Use flexbox to align children */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100px;
+  /* Or whatever height you prefer */
+  background-color: #252525;
+  /* Optional: adds a background color to the header */
+}
+
+header img.logo {
+  width: 50px;
+  height: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centers the book cover horizontally within the book div */
+  align-items: center;
+  /* Centers the book cover vertically within the book div */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.book-cover {
+  width: 100px;
+  height: auto;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #252525;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.book-info h1,
+.book-info p {
+  margin: 5px 0;
+}
+
+/* Hide the radio input */
+.rating input {
+  display: none;
+}
+
+/* Style the label (star) */
+.rating label {
+  float: right;
+  padding: 5px;
+  font-size: 50px;
+  color: lightgray;
+  /* Default color of stars */
+  transition: color 0.2s ease;
+}
+
+/* Change star color when hovering over the label or any preceding label */
+.rating label:hover,
+.rating label:hover~label,
+.rating input:checked~label {
+  color: gold;
+}
+
+#comment-form textarea {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.comments button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: #645d53;
+  color: rgb(241, 236, 227);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  /* S'assure que les boutons sont sur la même ligne si l'espace le permet */
+}
+
+.comment-list {
+  display: none;
+  /* Cache initialement la liste des commentaires */
+  background-color: #252525;
+  /* Couleur de fond */
+  padding: 10px;
+  /* Espacement pour la lisibilité */
+  margin-top: 10px;
+  /* Espacement au-dessus de la liste */
+}
+
+.comment {
+  padding: 5px;
+  margin-top: 2px;
+  border-bottom: 1px solid #ddd;
+  /* Ajoute une ligne sous chaque commentaire */
+  color: #f1e8df;
+  /* Couleur du texte des commentaires */
+}
+
+#notes-comments-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: #d39b4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  /* Fixe le footer au bas de la fenêtre du navigateur */
+  left: 0;
+  /* Aligné à gauche */
+  bottom: 0;
+  /* Aligné en bas */
+  width: 100%;
+  /* Prend toute la largeur de la fenêtre */
+  background-color: #252525;
+  /* Couleur de fond du footer */
+  padding: 10px 0;
+  /* Padding pour un peu d'espace autour des liens */
+  z-index: 1000;
+  /* Assure que le footer reste au-dessus des autres éléments */
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #252525;
+}
+
+footer nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+}
+
+footer nav a:hover {
+  color: #aaaaff;
+  /* Light blue color on hover */
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition for color and background */
+}
+
+footer nav a.active {
+  color: #007bff;
+}
+
+.nav-icon {
+  width: 40px;
+  /* Sets a fixed width for icons */
+  height: auto;
+  /* Maintains aspect ratio */
+  margin-bottom: 8px;
+  /* Adds spacing between the icon and text */
+  border-radius: 8px;
+}

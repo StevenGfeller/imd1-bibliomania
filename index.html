@@ -1,32 +1,65 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bibliomania</title>
-    <link rel="stylesheet" href="scripts/star-rating.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- 🦊 Votre page ici -->
+<html lang="en">
 
-    <!-- 💡 Décommentez cette balise et placez-la dans votre code afin d'afficher le système de note Javascript -->
-    <!-- 
-        <select class="star-rating" aria-label="Note utilisateur">
-            <option value="">Select a rating</option>
-            <option value="5">Excellent</option>
-            <option value="4">Very Good</option>
-            <option value="3">Average</option>
-            <option value="2">Poor</option>
-            <option value="1">Terrible</option>
-        </select>
-    -->
-    <!-- 💡 Script pour gérer le rating d'un livre -->
-    <script src="scripts/star-rating.min.js"></script>
-    <script>
-      var stars = new StarRating(".star-rating", {
-        tooltip: "Choisissez votre note",
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Detail</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="img/logo/KimboYetu-logo.png" alt="Book Manager Logo" class="logo" />
+    </header>
+    <div class="background"></div>
+    <main>
+      <div class="book">
+        <img src="img/couvertures/origines_couverture.jpg" alt="Cover of Origines" class="book-cover" />
+        <div class="book-info">
+          <h1>ORIGINE</h1>
+          <p class="author">Laurence Suhner</p>
+          <p class="year">L'Atalante, 2015</p>
+          <div class="rating">
+            <!-- Each input radio button corresponds to a star -->
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5">☆</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4">☆</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3">☆</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2">☆</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1">☆</label>
+          </div>
+
+          <p class="genre">Roman de science-fiction</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <div class="comments">
+            <button type="button" id="add-comment-btn">Ajouter un commentaire...</button>
+            <div id="comment-form" style="display:none;">
+              <textarea placeholder="ajouter un commentaire..."></textarea>
+              <button type="button" id="submit-comment-btn">Valider</button>
+              <button type="button" id="cancel-comment-btn">Annuler</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="notes-comments-btn">Notes et commentaires</button>
+        <br>
+        <div class="comment-list"></div>
+      </div>
+    </main>
+    <footer>
+      <nav>
+        <a href="#" class="active"><img src="img/Icones/home-icon.webp" alt="Home" class="nav-icon" />Home</a>
+        <a href="#"><img src="img/Icones/search-icon.webp" alt="Search" class="nav-icon" />Search</a>
+        <a href="#"><img src="img/Icones/collection-icon.png" alt="Collection" class="nav-icon" />Collection</a>
+        <a href="#"><img src="img/Icones/profile-icon.webp" alt="Profile" class="nav-icon" />Profile</a>
+      </nav>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
